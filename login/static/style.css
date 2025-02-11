@@ -1,0 +1,24 @@
+body{
+    text-align: center;
+    background-image: url('bible_background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 2000px 1000px;
+}
+
+h1{
+    display: flex:
+    align-items: center;
+    justify-content: center;
+    color: gold;
+    height: 100px;
+    margin-top: 450px;
+}
+
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
