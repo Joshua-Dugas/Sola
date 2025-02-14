@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<link rel="stylesheet" href="{% static 'create_account_style.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+</head>
+
+<body>
+
+<h1>Please fill out the necessary information below to create your account:</h1>
+<div class="form_container">
+<form action = "" method = "get">
+    <label for="create_username">Enter a Username: </label>
+    <input id="create_username" type="text" name="create_username">
+    <br>
+    <br>
+    <label for="create_password">Enter a Password: </label>
+    <input id="create_password" type="text" name="create_password">
+    <br>
+    <br>
+    <lab for="re_enter_password"> Re-Enter Password</lab>
+    <input id="re_enter_password" type="text" name="re_enter_password">
+    <br>
+    <input id="done_button" type="submit" value="Done">
+</form>
+
+</div>
+
+</body>
+</html>

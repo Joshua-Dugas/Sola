@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'login_style.css' %}">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
 
 </head>
 <h1>Welcome to Sola, Please log in below:</h1>
-<div class="form-container">
+<div class="form_container">
 <form action = "" method = "get">
     <label for="username">Username: </label>
     <input id="username" type="text" name="username">
@@ -18,7 +18,13 @@
     <input id="password" type="text" name="password">
     <input type="submit" value="OK">
 </form>
+
 </div>
+
+<div class="create_account">
+    <p>Need to make an account? Click the button below:</p>
+    <button>Create Account</button>
+ </div>
 
 </body>
 </html>

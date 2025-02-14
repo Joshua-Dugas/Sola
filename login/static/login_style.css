@@ -16,9 +16,16 @@ h1{
     margin-top: 450px;
 }
 
-.form-container{
+.form_container{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.create_account{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: gold;
 }
 
