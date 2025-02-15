@@ -33,8 +33,8 @@
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
-              <a class="nav-item nav-link" href="#">Login</a>
-              <a class="nav-item nav-link" href="#">Register</a>
+              <a class="nav-item nav-link" href="../">Login</a>
+              <a class="nav-item nav-link" href="/create_account">Register</a>
             </div>
           </div>
         </div>
@@ -43,8 +43,16 @@
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
+            {% if messages %}
+                {%for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            {% endif %}
           {% block content %}{% endblock %}
         </div>
+          {% block navigation_menu %}
         <div class="col-md-4">
           <div class="content-section">
             <h3>Site Navigation</h3>
@@ -56,6 +64,7 @@
               </ul>
           </div>
         </div>
+          {% endblock navigation_menu%}
       </div>
     </main>
 

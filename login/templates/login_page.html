@@ -1,30 +1,26 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<link rel="stylesheet" href="{% static 'login_style.css' %}">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
+{% extends "base_template.html" %}
 
-</head>
-<h1>Welcome to Sola, Please log in below:</h1>
+{% block content %}
 <div class="form_container">
-<form action = "" method = "get">
-    <label for="username">Username: </label>
-    <input id="username" type="text" name="username">
-    <br>
-    <br>
-    <label for="password">Password: </label>
-    <input id="password" type="text" name="password">
-    <input type="submit" value="OK">
+<form action = "" method = "POST">
+    <!--- This token is for security purposes. The form will not work without it--->
+    {% csrf_token %}
+    <!--- This form uses bootstrap formatting--->
+    <legend class="border-bottom mb-4"> Please enter your login information below:</legend>
+    <!--- This prints out form and the as_p prints the text as paragraph format--->
+    {{ form.as_p }}
+    <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Login</button>
+    </div>
 </form>
-
+</div>
+{% block navigation_menu %}
+{% endblock navigation_menu%}
+<div class="border-top pt-3">
+    <small class="text-muted">
+        Don't already have an account? Click the link or press register at the top of the webpage: <a class="ml-2" href="/create_account">Create a Account</a>
+    </small>
 </div>
 
-<div class="create_account">
-    <p>Need to make an account? Click the button below:</p>
-    <button>Create Account</button>
- </div>
 
-</body>
-</html>
+{% endblock content%}
