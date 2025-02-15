@@ -1,32 +1,27 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<link rel="stylesheet" href="{% static 'create_account_style.css' %}">
-<head>
-    <meta charset="UTF-8">
-    <title>Create Account</title>
-</head>
+{% extends "base_template.html" %}
 
-<body>
-
-<h1>Please fill out the necessary information below to create your account:</h1>
+{% block content %}
+<h1>Account Creation:</h1>
 <div class="form_container">
-<form action = "" method = "get">
-    <label for="create_username">Enter a Username: </label>
-    <input id="create_username" type="text" name="create_username">
-    <br>
-    <br>
-    <label for="create_password">Enter a Password: </label>
-    <input id="create_password" type="text" name="create_password">
-    <br>
-    <br>
-    <lab for="re_enter_password"> Re-Enter Password</lab>
-    <input id="re_enter_password" type="text" name="re_enter_password">
-    <br>
-    <input id="done_button" type="submit" value="Done">
+<form action = "" method = "POST">
+    <!--- This token is for security purposes. The form will not work without it--->
+    {% csrf_token %}
+    <!--- This form uses bootstrap formatting--->
+    <legend class="border-bottom mb-4"> Create Account: Fill out the fields below</legend>
+    <!--- This prints out form and the as_p prints the text as paragraph format--->
+    {{ form.as_p }}
+    <div class="form-group">
+        <button class="btn btn-outline-info" type="submit"> Create Account</button>
+    </div>
 </form>
-
 </div>
 
-</body>
-</html>
+<div class="border-top pt-3">
+    <small class="text-muted">
+        Already have an Account? <a class="ml-2" href="#">Sign in</a>
+    </small>
+</div>
+
+{% endblock content %}
+
+
