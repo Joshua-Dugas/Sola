@@ -3,3 +3,4 @@ Django
 sqlparse
 whitenoise
 django-crispy-forms
+crispy_bootstrap5
