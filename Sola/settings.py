@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -122,6 +122,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+#Specifies where we upload media to
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 STATIC_ROOT = BASE_DIR / 'productionfiles'
 
 # Default primary key field type
@@ -129,8 +133,13 @@ STATIC_ROOT = BASE_DIR / 'productionfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#Sets the specific packages to be used for crispy
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 
+#This is to help django understand the routes that are to be taken for certain prebuilt actions
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'logout'
+LOGIN_URL = 'login'
+
+

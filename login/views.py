@@ -4,10 +4,15 @@ from django.template import loader
 from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
     return render(request, 'home_page.html')
+
+@login_required
+def profile(request):
+    return render(request, 'profile_page.html')
 
 def logout_view(request):
     logout(request)
